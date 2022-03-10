@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-master.yaml
+  - changeSet:
+      id: 1
+      author: alex
+      changes:
+        - createTable:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: product_name
+                  type: varchar(50)
+              - column:
+                  name: prise
+                  type: DOUBLE
+              - column:
+                  name: number_of_product
+                  type: INT
+
+
+  - changeSet:
+      id: 2
+      author: alex
+      comment: "Create"
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: product_name
+                  value: "вода"
+              - column:
+                  name: prise
+                  value: 95.0
+              - column:
+                  name: number_of_product
+                  value: 30
+
